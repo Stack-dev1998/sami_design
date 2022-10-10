@@ -1,23 +1,12 @@
 import React, { useState } from "react";
 import NavbarMenu from "../common/NavbarMenu";
 import ItemsCarousel from "react-items-carousel";
-
+import ServiceWeOffer from "./serviceWeOffer";
 //images
 import heroImg from "../../assets/images/Hero Illustration.png";
-import hero_bottom from "../../assets/images/hero_bottom.svg";
+import hero_bottom from "../../assets/images/HomePage/Rectangle 151.png";
 import Tech_Eye_Illus from "../../assets/images/Tech Eye Illus.svg";
-import Rectangle_158 from "../../assets/images/Rectangle 158.svg";
-import Star_2 from "../../assets/images/Star 2.svg";
-import Group_4848 from "../../assets/images/Group 4848.svg";
-import normal_line from "../../assets/images/normal_line.svg";
-import active_line from "../../assets/images/active_line.svg";
-import html from "../../assets/images/html.svg";
-import html2 from "../../assets/images/html_2.svg";
-import react_icon from "../../assets/images/react.svg";
-import vue from "../../assets/images/vue.svg";
-import bootstrap_icon from "../../assets/images/bootstrap.svg";
-import left_arow from "../../assets/images/left_arrow.svg";
-import right_arrow from "../../assets/images/right_arrow.svg";
+
 import left_blue_arow from "../../assets/images/left_blue_arrow.svg";
 import right_blue_arrow from "../../assets/images/right_blue_arrow.svg";
 import EDUCATION from "../../assets/images/EDUCATION.svg";
@@ -27,69 +16,89 @@ import RETAIL from "../../assets/images/RETAIL.svg";
 import AGRICULTURE from "../../assets/images/AGRICULTURE.svg";
 import BUSINESS from "../../assets/images/BUSINESS.svg";
 
+import IPAD from "../../assets/images/HomePage/Optimus IPAD.png";
+import optimus_health from "../../assets/images/HomePage/optimus health (white) 1.png";
+import Optimus_PHONE from "../../assets/images/HomePage/Optimus PHONE.png";
+
+import Q_APP_Logo from "../../assets/images/HomePage/qurbani_app_logo.svg";
+import Q_APP_Tablet from "../../assets/images/HomePage/qurbani_app_ipad.png";
+import Q_APP_PHONE from "../../assets/images/HomePage/qurbani_app.png";
+
+import Naseem_Logo from "../../assets/images/HomePage/naseemlogo.svg";
+import Naseem_Tablet from "../../assets/images/HomePage/Naseem IPAD.png";
+import Naseem_PHONE from "../../assets/images/HomePage/Naseem PHONE.png";
+
+import Stock_Logo from "../../assets/images/HomePage/StockChain_logo.svg";
+import Stock_Tablet from "../../assets/images/HomePage/Stockchain IPAD.png";
+import Stock_PHONE from "../../assets/images/HomePage/Stockchain PHONE.png";
+
 const HomagePage = () => {
-  const [activeItemIndex, setActiveItemIndex] = useState(0);
   const [activeItemIndex2, setActiveItemIndex2] = useState(0);
   const chevronWidth = 40;
   return (
     <div>
       <NavbarMenu />
-      <div className="hero_section text-white">
-        <div className="container">
-          <img
-            src={heroImg}
-            className="position-absolute end-0 me-5 h-75 mt-3 img-fluid"
-          />
-          <p className="pt-4 fs-2">
-            Transform thoughts into progressive ventures
-            <br />& services with
-          </p>
-          <h2 className="pt-4 fs-1">
-            Interaction Design, Technology,
-            <br />
-            Innovation & Support
-          </h2>
+      <div className="position-relative hero_section_parent" >
+        <div className="hero_section text-white w-100">
+          <div className="container position-relative">
+            <img
+              src={heroImg}
+              className="position-absolute end-0 me-5 img-fluid hero_img"
+              style={{ height: "600px" ,zIndex:"0"}}
+            />
+           <div className="position-absolute a">
+           <p className="pt-4 fs-2"  >
+              Transform thoughts into progressive ventures
+              <br />& services with
+            </p>
+            <h2 className="pt-4 fs-1">
+              Interaction Design, Technology,
+              <br />
+              Innovation & Support
+            </h2>
+           </div>
+          </div>
         </div>
-        <div
-          className="position-absolute bottom-0 w-100"
-          style={{ marginBottom: "-13%" }}
-        >
-          <img
-            src={hero_bottom}
-            className="position-absolute bottom-0 w-100 img-fluid"
-            // style={{ marginBottom: "-13%" }}
-          />
-          <div
-            className="position-absolute bottom-0 w-100"
-            style={{ marginBottom: "-5%" }}
-          >
-            <div className="container ">
-              <div className="row">
-                <div className="col-sm-6">
-                  <img src={Tech_Eye_Illus} className="img-fluid" />
-                </div>
-                <div className="col-sm-6 d-flex align-items-center">
-                  <div>
-                    <p className="fs-2"> Let us help you see the world with</p>
-                    <br />
-                    <p className="fs-1 fw-semibold text_yellow">Tech Eyes</p>
-                  </div>
+
+        <img
+          src={hero_bottom}
+          className="position-absolute bottom-0 w-100 bottom_layer"
+          
+        />
+        <div className="position-absolute bottom-0 w-100 hero_bottom">
+          <div className="container ">
+            <div className="row">
+              <div className="col-12 col-md-6 d-flex justify-content-center" style={{ height: "350px" }}>
+                <img
+                  src={Tech_Eye_Illus}
+                  style={{ objectFit: "cover", height: "100%", }}
+                 
+                />
+              </div>
+              <div className="col-12 col-md-6 d-block d-md-flex  align-items-center text-white ">
+                <div>
+                  <p className="fs-2 "> Let us help you see the world with</p>
+                  <br />
+                  <p className="fs-1 fw-semibold text_yellow">Tech Eyes</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="our_process py-5">
-        <div className="container py-5">
-          <p className="fs-1 text_orange">Our process at Infini8AI</p>
-          <p className="fs-2 my-5 lh-base">
+
+      <div className="our_process">
+        <div className="container py-5 ">
+          <p className="fs-1 text_orange text-center mt-5 fw-semibold">
+            Our process at Infini8AI
+          </p>
+          <p className="fs-2 my-5 lh-base text-justify">
             Our 'itterative' approch helps expand development. From
             understanding your clients and business difficulties to building up
             your product and taking it to showcase in the briefest conceivable
             time, we customize how we work to accommodate your venture needs.
           </p>
-          <button className="blue_btn  ">View details</button>
+          <button className="blue_btn float-end ">View details</button>
         </div>
       </div>
 
@@ -135,114 +144,14 @@ const HomagePage = () => {
           </div>
         </div>
       </div>
-      <div className="container service_we_offer d-flex align-items-end py-5">
-        <p className="text_yellow fs-2  fw-bolder position-relative">
-          Sevices we offer{" "}
-          <span className="position-absolute mt-2" style={{ zIndex: "-2" }}>
-            <img
-              src={Rectangle_158}
-              style={{ width: "20px", marginLeft: "-10px" }}
-            />
-          </span>
-        </p>
-      </div>
+      {/* ========================================= Services ====================== */}
 
-      <div className="development ">
-        <div className="rectangle"> </div>
-        <div className="container">
-          <div className="row gx-5">
-            <div className="col-5 px-2">
-              <div className="d-flex my-3">
-                <span>
-                  <img src={Star_2} />
-                </span>
-                <p className="fs-6 fw-semibold text_blue ms-2">
-                  Web Developement
-                </p>
-              </div>
-              <p className="fs-6">
-                We offer a variety of front end, back end, and progressive web
-                development services, from creating mobile web development
-                solutions and responsive web designs, to building custom web
-                experiences using cutting-edge web technologies.
-              </p>
-              <div style={{ width: "93%" }} className="mt-5">
-                <ItemsCarousel
-                  requestToChangeActive={setActiveItemIndex}
-                  activeItemIndex={activeItemIndex}
-                  numberOfCards={6}
-                  gutter={20}
-                  leftChevron={<img src={left_arow} />}
-                  rightChevron={<img src={right_arrow} />}
-                  outsideChevron
-                  chevronWidth={chevronWidth}
-                >
-                  <img src={html} style={{ width: "100px", height: "100px" }} />
-                  <img
-                    src={html2}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img
-                    src={react_icon}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img src={vue} style={{ width: "100px", height: "100px" }} />
-                  <img
-                    src={bootstrap_icon}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img src={vue} style={{ width: "100px", height: "100px" }} />
-                  <img
-                    src={bootstrap_icon}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img
-                    src={react_icon}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img
-                    src={html2}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                </ItemsCarousel>
-              </div>
-            </div>
-            <div className="col-7 px-2">
-              <div className="row">
-                <div className="col-sm-4 d-flex flex-column justify-content-between ">
-                  <img src={Group_4848} className="img-fluid  my-auto" />
-                </div>
-                <div className="col-sm-8 d-flex flex-column justify-content-between h-100 py-5">
-                  <div className="d-flex align-items-center">
-                    <input type="radio" className="h-100" name="a" />
-                    <img src={active_line} />
-                    <p className="ms-3">Web Developement</p>
-                  </div>
-                  <div className="d-flex align-items-center">
-                    <input type="radio" className="h-100" name="a" />
-                    <img src={normal_line} />
-                    <p className="ms-3">Mobile Developement</p>
-                  </div>
-                  <div className="d-flex align-items-center">
-                    <input type="radio" className="h-100 mt-1" name="a" />
-                    <img src={normal_line} />
-                    <p className="ms-3">Desktop Applications</p>
-                  </div>
-                  <div className="d-flex align-items-center">
-                    <input type="radio" className="h-100 mt-1" name="a" />
-                    <img src={normal_line} />
-                    <p className="ms-3">Cloud Native</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ServiceWeOffer />
+      {/* =========================================  Products ====================== */}
 
       <div className="products">
         <div className="container py-5">
-          <p className="text_dark_blue fs-2  fw-bolder position-relative mt-5">
+          <p className="text_dark_blue fs-2  fw-bolder position-relative mt-5 text-center">
             Products & Indrustries we serve
             <span className="position-absolute mt-3 blue_icon"></span>
           </p>
@@ -252,21 +161,19 @@ const HomagePage = () => {
               requestToChangeActive={setActiveItemIndex2}
               activeItemIndex={activeItemIndex2}
               numberOfCards={5}
-              gutter={20}
-              leftChevron={
-                <img src={left_blue_arow} className="img-fluid" />
-              }
+              gutter={10}
+              leftChevron={<img src={left_blue_arow} className="img-fluid" />}
               rightChevron={
                 <img src={right_blue_arrow} className="img-fluid" />
               }
               outsideChevron
               chevronWidth={chevronWidth}
             >
-              <div className="text-center">
+              <div className="text-center" style={{ height: "200px" }}>
                 <img
                   src={EDUCATION}
                   className="img-fluid"
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>EDUCATION</p>
               </div>
@@ -274,7 +181,7 @@ const HomagePage = () => {
                 <img
                   src={HEALTHCARE}
                   className="img-fluid"
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>HEALTHCARE</p>
               </div>
@@ -282,7 +189,7 @@ const HomagePage = () => {
                 <img
                   src={BUSINESS}
                   className="img-fluid"
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>BUSINESS</p>
               </div>
@@ -290,7 +197,7 @@ const HomagePage = () => {
                 <img
                   src={AGRICULTURE}
                   className="img-fluid"
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>AGRICULTURE</p>
               </div>
@@ -298,7 +205,7 @@ const HomagePage = () => {
                 <img
                   src={RETAIL}
                   className="img-fluid"
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>RETAIL</p>
               </div>
@@ -306,7 +213,7 @@ const HomagePage = () => {
                 <img
                   src={HEALTHCARE}
                   className="img-fluid"
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>HEALTHCARE</p>
               </div>
@@ -314,7 +221,7 @@ const HomagePage = () => {
                 <img
                   src={AGRICULTURE}
                   className="img-fluid"
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>AGRICULTURE</p>
               </div>
@@ -322,11 +229,135 @@ const HomagePage = () => {
                 <img
                   src={RETAIL}
                   className="img-fluid"
-                  style={{ width: "200px", height: "200px" }}
+                  style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>RETAIL</p>
               </div>
             </ItemsCarousel>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================= Card 1========================================= */}
+      <div className="cards card1  ">
+        <div className="container">
+          <div className="row">
+            <div className="col-7 col-md-6 col-lg-8 order-2 order-md-1">
+              <img src={IPAD} className="img-fluid ipad" />
+            </div>
+            <div className="col-12  col-md-6 col-lg-4 order-first order-md-2  ">
+              <img
+                src={optimus_health}
+                className="float-md-end img-fluid w-100 health"
+              />
+            </div>
+            <div className="col-12 col-md-6 order-4 order-md-3 fs-2 text-center text-md-start  ">
+              Easily aggregate & streamline all your well-being data, apps &
+              expert coaching on a single “Smartphone App”, towards your own
+              personalized optimal unique lifestyle.
+            </div>
+            <div className=" col-5 col-md-6 order-3 order-md-4">
+              <img
+                src={Optimus_PHONE}
+                className="float-end img-fluid  mobile"
+              />
+            </div>
+          </div>
+          <div className="d-flex justify-content-center justify-content-md-start">
+            <button className="card_btns btn_outline_gray  mt-5 mt-md-0">
+              View details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================= Card 2 ========================================= */}
+      <div className="cards card2">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-md-6 col-lg-4  ">
+              <img src={Q_APP_Logo} className="img-fluid health w-100" />
+            </div>
+            <div className="col-7 col-md-6 col-lg-8 mt-4 mt-md-0">
+              <img
+                src={Q_APP_Tablet}
+                className="float-md-end img-fluid   ipad"
+              />
+            </div>
+
+            <div className=" col-5 col-md-6  mt-4 mt-md-0">
+              <img src={Q_APP_PHONE} className="img-fluid  mobile" />
+            </div>
+            <div className="col-12 col-md-6 fs-2 text-center text-md-start  ">
+              A Network Marketplace to buy, sell and share livestock for free
+              anywhere world wide.
+            </div>
+          </div>
+          <div className="d-flex justify-content-center justify-content-md-start">
+            <button className="card_btns btn_outline_green mt-5 mt-md-0">
+              View details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================= Card 3 ========================================= */}
+      <div className="cards card3">
+        <div className="container">
+          <div className="row">
+            <div className="col-7 col-md-6 col-lg-8 order-2 order-md-1">
+              <img src={Naseem_Tablet} className="img-fluid ipad" />
+            </div>
+            <div className="col-12 col-md-6 col-lg-4 order-first order-md-2  ">
+              <img
+                src={Naseem_Logo}
+                className="float-md-center img-fluid  w-75 health"
+              />
+            </div>
+            <div className="col-12 col-md-6 order-4 order-md-3 fs-2 text-center text-md-start  ">
+              A learning management system powered by artificial intelligence,
+              neuroscience and learning sciences
+            </div>
+            <div className=" col-5 col-md-6 order-3 order-md-4">
+              <img src={Naseem_PHONE} className="float-end img-fluid  mobile" />
+            </div>
+          </div>
+          <div className="d-flex justify-content-center justify-content-md-start">
+            <button className="card_btns btn_outline_purple mt-5 mt-md-0">
+              View details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================= Card 4 ========================================= */}
+      <div className="cards card4">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-md-6 col-lg-4  ">
+              <img src={Stock_Logo} className="img-fluid health w-75" />
+            </div>
+            <div className="col-7 col-md-6 col-lg-8 mt-4 mt-md-0">
+              <img
+                src={Stock_Tablet}
+                className="float-md-end img-fluid   ipad"
+              />
+            </div>
+
+            <div className=" col-5 col-md-6  mt-4 mt-md-0">
+              <img src={Stock_PHONE} className="img-fluid  mobile" />
+            </div>
+            <div className="col-12 col-md-6 fs-2 text-center text-md-start  ">
+              “StockChain” is an advance logistic solution that gives you
+              complete transparency in supply chain and cargo mobility. From
+              booking to delivery, you can track every segment of the whole
+              process.
+            </div>
+          </div>
+          <div className="d-flex justify-content-center justify-content-md-start">
+            <button className=" card_btns btn_outline_blue mt-5 mt-md-0">
+              View details
+            </button>
           </div>
         </div>
       </div>
