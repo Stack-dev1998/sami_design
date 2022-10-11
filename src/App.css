@@ -187,11 +187,13 @@ select {
   border: none;
   border-radius: 4px;
   background: #04b2ae;
+  margin-bottom: 20px;
 }
 .nav_bar {
   height: 70px;
   color: #6b6b6b;
 }
+
 .list_style_none {
   list-style: none;
 }
@@ -222,7 +224,7 @@ select {
   margin-bottom: -80px;
 }
 .our_process {
-  height: 676px;
+  min-height: 676px;
   margin-top: -80px;
   padding-top: 40px;
   background: linear-gradient(
@@ -237,6 +239,7 @@ select {
 
 .cards_detail {
   min-height: 350px;
+  width: 100%;
   background: #f6f6f6;
   padding: 20px 0px;
 }
@@ -280,6 +283,11 @@ select {
     #f0f9ff 0%,
     rgba(240, 249, 255, 0) 127.68%
   );
+}
+
+.cards_detail .process_cards :nth-child(3) {
+  display: none;
+  margin-bottom: 0;
 }
 
 .blue_icon {
@@ -346,19 +354,81 @@ select {
   background: linear-gradient(180deg, #005bff 0%, rgba(0, 91, 255, 0) 97.22%);
 }
 
+footer {
+  min-height: 600px;
+  background: linear-gradient(180deg, #04b2ae 0%, #038582 100%);
+}
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
+  .mobile_nav {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    left: 0;
+    top: 71px;
+    text-align: center;
+    background-color: white;
+  }
+  .mobile_nav ul li {
+    padding: 10px 0px;
+  }
+  .open_menu {
+    display: block;
+  }
+  .close_menu {
+    display: none;
+  }
+
+  .service_we_offer_mobile {
+    width: 100%;
+    min-height: 280px;
+
+    background: #faf0b3;
+    border-width: 2px 0px;
+    border-style: solid;
+    border-color: #04b2ae;
+    border-radius: 8px;
+    padding: 10px;
+  }
   .cards .ipad {
     margin-top: 0px;
     width: 100%;
     height: 400px;
   }
+  .cards_detail {
+    background-color: white;
+  }
+  .cards_detail .process_cards {
+    background: #04b2ae !important;
+    border-width: 1.29818px 1.29818px 0px 1.29818px;
+    border-style: solid;
+    border-color: #006664;
+    border-radius: 3.89453px;
+  }
+  .cards_detail .process_cards :first-child {
+    color: #ffda07 !important;
+  }
+  .cards_detail .process_cards :nth-child(2) {
+    color: white !important;
+  }
+  .cards_detail .process_cards :nth-child(3) {
+    display: block;
+    max-width: 170px;
+    margin: auto;
+    margin-bottom: -100px;
+  }
+  .cards_row :nth-child(3) {
+    margin-top: 100px !important;
+  }
+  .cards_row :nth-child(4) {
+    margin-top: 100px !important;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-
-  .hero_img{
+  .hero_img {
     position: static !important;
     height: 400px !important;
   }
@@ -383,12 +453,7 @@ select {
     margin-left: auto;
     margin-right: auto;
   }
-.a{
-  top: 0;
-  bottom: 0;
-  margin-top: auto;
-  margin-bottom: auto;
-}
+
   .cards .mobile {
     margin-top: 0px;
   }

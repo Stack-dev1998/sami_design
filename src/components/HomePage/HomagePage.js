@@ -32,47 +32,55 @@ import Stock_Logo from "../../assets/images/HomePage/StockChain_logo.svg";
 import Stock_Tablet from "../../assets/images/HomePage/Stockchain IPAD.png";
 import Stock_PHONE from "../../assets/images/HomePage/Stockchain PHONE.png";
 
+import rocket from "../../assets/images/HomePage/rocket.png";
+import calendar from "../../assets/images/HomePage/orange calendar.png";
+import headphones from "../../assets/images/HomePage/pink headphones.png";
+import support_female from "../../assets/images/HomePage/support female.png";
+import Footer from "../common/Footer";
+
 const HomagePage = () => {
   const [activeItemIndex2, setActiveItemIndex2] = useState(0);
   const chevronWidth = 40;
   return (
     <div>
       <NavbarMenu />
-      <div className="position-relative hero_section_parent" >
+      <div className="position-relative hero_section_parent">
         <div className="hero_section text-white w-100">
           <div className="container position-relative">
             <img
               src={heroImg}
               className="position-absolute end-0 me-5 img-fluid hero_img"
-              style={{ height: "600px" ,zIndex:"0"}}
+              style={{ height: "600px", zIndex: "0" }}
             />
-           <div className="position-absolute a">
-           <p className="pt-4 fs-2"  >
-              Transform thoughts into progressive ventures
-              <br />& services with
-            </p>
-            <h2 className="pt-4 fs-1">
-              Interaction Design, Technology,
-              <br />
-              Innovation & Support
-            </h2>
-           </div>
+            <div className="position-absolute">
+              <p className="pt-4 fs-2">
+                Transform thoughts into progressive ventures
+                <br />& services with
+              </p>
+              <h2 className="pt-4 fs-1">
+                Interaction Design, Technology,
+                <br />
+                Innovation & Support
+              </h2>
+            </div>
           </div>
         </div>
 
         <img
           src={hero_bottom}
           className="position-absolute bottom-0 w-100 bottom_layer"
-          
         />
         <div className="position-absolute bottom-0 w-100 hero_bottom">
           <div className="container ">
             <div className="row">
-              <div className="col-12 col-md-6 d-flex justify-content-center" style={{ height: "350px" }}>
+              <div
+                className="col-12 col-md-6 d-flex justify-content-center"
+                style={{ height: "350px" }}
+              >
                 <img
                   src={Tech_Eye_Illus}
-                  style={{ objectFit: "cover", height: "100%", }}
-                 
+                  
+                  className='img-fluid'
                 />
               </div>
               <div className="col-12 col-md-6 d-block d-md-flex  align-items-center text-white ">
@@ -98,47 +106,59 @@ const HomagePage = () => {
             your product and taking it to showcase in the briefest conceivable
             time, we customize how we work to accommodate your venture needs.
           </p>
-          <button className="blue_btn float-end ">View details</button>
+          <button className="btn_blue float-end ">View details</button>
         </div>
       </div>
 
       <div className="cards_detail d-flex align-items-center">
         <div className="container   ">
-          <div className="row gx-5 h-100 ">
-            <div className="col-xs-12 col-sm-6 col-lg-3 mt-3 mt-lg-0 ">
-              <div className="bg-white rounded p-3 px-4 h-100 d-flex flex-column justify-content-between">
+          <div className="row gx-5 h-100 cards_row">
+            <div className="col-6 col-lg-3  ">
+              <div className="bg-white rounded p-3 px-4 h-100 d-lg-flex flex-lg-column justify-content-lg-between process_cards">
                 <p className="text_gray fs-4">Quick Launch</p>
-                <p className="text_gray mt-5">
+                <p className="text_gray mt-3 mt-lg-5">
                   You can relay on our amazing features list and also our
                   customer services will be a great experience.
                 </p>
+                <div>
+                  <img src={rocket} className="img-fluid w-100" />
+                </div>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-6 col-lg-3 mt-3 mt-lg-0 ">
-              <div className="bg-white rounded p-3 px-4 h-100 d-flex flex-column justify-content-between">
-                <p className="text_gray fs-4">MVP within a month</p>
-                <p className="text_gray mt-5">
+            <div className="col-6  col-lg-3  ">
+              <div className="bg-white rounded p-3 px-4 h-100 d-lg-flex flex-lg-column justify-content-lg-between process_cards">
+                <p className="text_gray fs-4">Quick Launch</p>
+                <p className="text_gray mt-3 mt-lg-5">
                   You can relay on our amazing features list and also our
                   customer services will be a great experience.
                 </p>
+                <div>
+                  <img src={calendar} className="img-fluid w-100" />
+                </div>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-6 col-lg-3 mt-3 mt-lg-0  ">
-              <div className="bg-white rounded p-3 px-4 h-100 d-flex flex-column justify-content-between">
-                <p className="text_gray fs-4">Prototypes</p>
-                <p className="text_gray mt-5">
+            <div className="col-6  col-lg-3 mt-3   ">
+              <div className="bg-white rounded p-3 px-4 h-100 d-lg-flex flex-lg-column justify-content-lg-between process_cards">
+                <p className="text_gray fs-4">Quick Launch</p>
+                <p className="text_gray mt-3 mt-lg-5">
                   You can relay on our amazing features list and also our
                   customer services will be a great experience.
                 </p>
+                <div>
+                  <img src={headphones} className="img-fluid w-100" />
+                </div>
               </div>
             </div>
-            <div className="col-xs-12 col-sm-6 col-lg-3 mt-3 mt-lg-0 ">
-              <div className="bg-white rounded p-3 px-4 h-100 d-flex flex-column justify-content-between">
-                <p className="text_gray fs-4">Support</p>
-                <p className="text_gray mt-5">
+            <div className="col-6  col-lg-3    ">
+              <div className="bg-white rounded p-3 px-4 h-100 d-lg-flex flex-lg-column justify-content-lg-between process_cards">
+                <p className="text_gray fs-4">Quick Launch</p>
+                <p className="text_gray mt-3 mt-lg-5">
                   You can relay on our amazing features list and also our
                   customer services will be a great experience.
                 </p>
+                <div>
+                  <img src={support_female} className="img-fluid w-100" />
+                </div>
               </div>
             </div>
           </div>
@@ -361,6 +381,8 @@ const HomagePage = () => {
           </div>
         </div>
       </div>
+
+      <Footer/>
       <br />
       <br />
       <br />
