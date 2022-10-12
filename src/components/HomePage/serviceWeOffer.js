@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useWindowSize from "../utils/useWindowSize";
-import ItemsCarousel from "react-items-carousel";
+import Slider from "react-slick";
 
 import Star_2 from "../../assets/images/Star 2.svg";
 import normal_line from "../../assets/images/normal_line.svg";
@@ -17,6 +17,7 @@ import app_development_img from "../../assets/images/HomePage/app-development.sv
 import desktop_development_img from "../../assets/images/HomePage/desktop-computer.svg";
 import database_development_img from "../../assets/images/HomePage/database-management.svg";
 import Rectangle_158 from "../../assets/images/Rectangle 158.svg";
+
 
 export default function ServiceWeOffer() {
   const size = useWindowSize();
@@ -89,8 +90,6 @@ export default function ServiceWeOffer() {
 }
 
 function MobileView(props) {
-  const chevronWidth = 40;
-
   return (
     <div className="service_we_offer_mobile">
       <div className="row">
@@ -110,8 +109,8 @@ function MobileView(props) {
               borderLeft: "none",
               borderRight: "none",
               borderBottom: "3px solid black",
-              width:"100%",
-              maxWidth:"400px"
+              width: "100%",
+              maxWidth: "400px",
             }}
             value={props.activeTab}
             onChange={(e) => props.setActiveTab(e.target.value)}
@@ -131,39 +130,13 @@ function MobileView(props) {
         {props.activeTab == "4" && props.cludeDevelopment}
       </p>
       <div style={{ width: "90%" }} className="mt-1 mx-auto">
-        <ItemsCarousel
-          requestToChangeActive={props.setActiveItemIndex}
-          activeItemIndex={props.activeItemIndex}
-          numberOfCards={props.corouselItems}
-          gutter={5}
-          leftChevron={<img src={left_arow} />}
-          rightChevron={<img src={right_arrow} />}
-          outsideChevron
-          chevronWidth={chevronWidth}
-        >
-          <img src={html} style={{ width: "100px", height: "100px" }} />
-          <img src={html2} style={{ width: "100px", height: "100px" }} />
-          <img src={react_icon} style={{ width: "100px", height: "100px" }} />
-          <img src={vue} style={{ width: "100px", height: "100px" }} />
-          <img
-            src={bootstrap_icon}
-            style={{ width: "100px", height: "100px" }}
-          />
-          <img src={vue} style={{ width: "100px", height: "100px" }} />
-          <img
-            src={bootstrap_icon}
-            style={{ width: "100px", height: "100px" }}
-          />
-          <img src={react_icon} style={{ width: "100px", height: "100px" }} />
-          <img src={html2} style={{ width: "100px", height: "100px" }} />
-        </ItemsCarousel>
+        <CustomSlider />
       </div>
     </div>
   );
 }
 
 function FullScreenView(props) {
-  const chevronWidth = 40;
   return (
     <div>
       <div className="development ">
@@ -188,46 +161,7 @@ function FullScreenView(props) {
                 {props.activeTab == "3" && props.destopDevelopment}
                 {props.activeTab == "4" && props.cludeDevelopment}
               </p>
-              <div style={{ width: "93%" }} className="mt-5 px-3">
-                <ItemsCarousel
-                  requestToChangeActive={props.setActiveItemIndex}
-                  activeItemIndex={props.activeItemIndex}
-                  numberOfCards={props.corouselItems}
-                  gutter={5}
-                  leftChevron={<img src={left_arow} />}
-                  rightChevron={<img src={right_arrow} />}
-                  outsideChevron
-                  chevronWidth={chevronWidth}
-                >
-                  <img src={html} style={{ width: "100px", height: "100px" }} />
-                  <img
-                    src={html2}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img
-                    src={react_icon}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img src={vue} style={{ width: "100px", height: "100px" }} />
-                  <img
-                    src={bootstrap_icon}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img src={vue} style={{ width: "100px", height: "100px" }} />
-                  <img
-                    src={bootstrap_icon}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img
-                    src={react_icon}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                  <img
-                    src={html2}
-                    style={{ width: "100px", height: "100px" }}
-                  />
-                </ItemsCarousel>
-              </div>
+              <CustomSlider />
             </div>
             <div className="col-7 px-2 float-end">
               <div className="row">
@@ -303,3 +237,54 @@ function FullScreenView(props) {
     </div>
   );
 }
+
+function CustomSlider() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 1500,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    nextArrow: <img src={right_arrow} />,
+    prevArrow: <img src={left_arow} />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 6,
+          slidesToScroll: 1,
+          
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+       
+    ],
+  };
+  return (
+    <div style={{ width: "93%"}} className="mt-5 px-3">
+      <Slider {...settings}>
+        <img src={html} style={{ width: "100px", height: "100px" }} />
+        <img src={html2} style={{ width: "100px", height: "100px" }} />
+        <img src={react_icon} style={{ width: "100px", height: "100px" }} />
+        <img src={vue} style={{ width: "100px", height: "100px" }} />
+        <img src={bootstrap_icon} style={{ width: "100px", height: "100px" }} />
+        <img src={vue} style={{ width: "100px", height: "100px" }} />
+        <img src={bootstrap_icon} style={{ width: "100px", height: "100px" }} />
+        <img src={react_icon} style={{ width: "100px", height: "100px" }} />
+        <img src={html2} style={{ width: "100px", height: "100px" }} />
+      </Slider>
+    </div>
+  );
+}
+
+ 

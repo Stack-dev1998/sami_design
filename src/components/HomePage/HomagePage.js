@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import NavbarMenu from "../common/NavbarMenu";
-import ItemsCarousel from "react-items-carousel";
+
 import ServiceWeOffer from "./serviceWeOffer";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 //images
 import heroImg from "../../assets/images/Hero Illustration.png";
 import hero_bottom from "../../assets/images/HomePage/Rectangle 151.png";
@@ -39,8 +43,35 @@ import support_female from "../../assets/images/HomePage/support female.png";
 import Footer from "../common/Footer";
 
 const HomagePage = () => {
-  const [activeItemIndex2, setActiveItemIndex2] = useState(0);
-  const chevronWidth = 40;
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 1500,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    nextArrow: <img src={right_blue_arrow} />,
+    prevArrow: <img src={left_blue_arow} />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
+  };
   return (
     <div>
       <NavbarMenu />
@@ -77,11 +108,7 @@ const HomagePage = () => {
                 className="col-12 col-md-6 d-flex justify-content-center"
                 style={{ height: "350px" }}
               >
-                <img
-                  src={Tech_Eye_Illus}
-                  
-                  className='img-fluid'
-                />
+                <img src={Tech_Eye_Illus} className="img-fluid" />
               </div>
               <div className="col-12 col-md-6 d-block d-md-flex  align-items-center text-white ">
                 <div>
@@ -137,7 +164,7 @@ const HomagePage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-6  col-lg-3 mt-3   ">
+            <div className="col-6  col-lg-3  ">
               <div className="bg-white rounded p-3 px-4 h-100 d-lg-flex flex-lg-column justify-content-lg-between process_cards">
                 <p className="text_gray fs-4">Quick Launch</p>
                 <p className="text_gray mt-3 mt-lg-5">
@@ -177,22 +204,11 @@ const HomagePage = () => {
           </p>
           <br />
           <div style={{ width: "93%" }} className="mt-5 mx-auto">
-            <ItemsCarousel
-              requestToChangeActive={setActiveItemIndex2}
-              activeItemIndex={activeItemIndex2}
-              numberOfCards={5}
-              gutter={10}
-              leftChevron={<img src={left_blue_arow} className="img-fluid" />}
-              rightChevron={
-                <img src={right_blue_arrow} className="img-fluid" />
-              }
-              outsideChevron
-              chevronWidth={chevronWidth}
-            >
+            <Slider {...settings}>
               <div className="text-center" style={{ height: "200px" }}>
                 <img
                   src={EDUCATION}
-                  className="img-fluid"
+                  className="img-fluid  mx-auto"
                   style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>EDUCATION</p>
@@ -200,7 +216,7 @@ const HomagePage = () => {
               <div className="text-center">
                 <img
                   src={HEALTHCARE}
-                  className="img-fluid"
+                  className="img-fluid mx-auto"
                   style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>HEALTHCARE</p>
@@ -208,7 +224,7 @@ const HomagePage = () => {
               <div className="text-center">
                 <img
                   src={BUSINESS}
-                  className="img-fluid"
+                  className="img-fluid  mx-auto"
                   style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>BUSINESS</p>
@@ -216,7 +232,7 @@ const HomagePage = () => {
               <div className="text-center">
                 <img
                   src={AGRICULTURE}
-                  className="img-fluid"
+                  className="img-fluid  mx-auto"
                   style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>AGRICULTURE</p>
@@ -224,7 +240,7 @@ const HomagePage = () => {
               <div className="text-center">
                 <img
                   src={RETAIL}
-                  className="img-fluid"
+                  className="img-fluid  mx-auto"
                   style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>RETAIL</p>
@@ -232,7 +248,7 @@ const HomagePage = () => {
               <div className="text-center">
                 <img
                   src={HEALTHCARE}
-                  className="img-fluid"
+                  className="img-fluid  mx-auto"
                   style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>HEALTHCARE</p>
@@ -240,7 +256,7 @@ const HomagePage = () => {
               <div className="text-center">
                 <img
                   src={AGRICULTURE}
-                  className="img-fluid"
+                  className="img-fluid  mx-auto"
                   style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>AGRICULTURE</p>
@@ -248,12 +264,12 @@ const HomagePage = () => {
               <div className="text-center">
                 <img
                   src={RETAIL}
-                  className="img-fluid"
+                  className="img-fluid  mx-auto"
                   style={{ height: "150px" }}
                 />
                 <p style={{ marginTop: "-20px" }}>RETAIL</p>
               </div>
-            </ItemsCarousel>
+            </Slider>
           </div>
         </div>
       </div>
@@ -382,7 +398,7 @@ const HomagePage = () => {
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
       <br />
       <br />
       <br />
